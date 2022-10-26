@@ -1,0 +1,35 @@
+{
+  "name": "flyguys",
+  "version": "1.0.0",
+  "description": "Social site for sharing drone video and events",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ebyington/Flyguys.git"
+  },
+  "keywords": [
+    "drone",
+    "video",
+    "events"
+  ],
+  "author": "Dennis Hickox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ebyington/Flyguys/issues"
+  },
+  "homepage": "https://github.com/Ebyington/Flyguys#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "connect-session-sequelize": "^6.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "mysql2": "^2.0.1",
+    "sequelize": "^5.21.2"
+  }
+}
