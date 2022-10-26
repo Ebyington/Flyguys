@@ -1,9 +1,9 @@
 // Outline for the routes once files are built
 
-// const router = require('express').Router();
+const router = require('express').Router();
 
-// const userRoutes = require('');
+const userRoutes = require('/user-route.js');
 
-// router.use('', nameHere);
+router.use('/users', userRoutes);
 
-// module.exports = router;
+module.exports = router;
