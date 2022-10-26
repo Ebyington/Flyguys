@@ -1,10 +1,12 @@
-// // Outline for the routes once files are built
 
+const router= require('express').Router();
 
-// const router = require('express').Router();
+const apiRoutes = require('./api/');
+const homeRoutes = require('./home-routes.js')
+const dashRoutes = require('./dash-routes.js');
 
-// const userRoutes = require('');
+router.use('/', homeRoutes);
+router.use('/dashboard', dashRoutes );
+router.use('/api', apiRoutes );
 
-// router.use('', nameHere);
-
-// module.exports = router;
+module.exports = router;
