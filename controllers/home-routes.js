@@ -1,4 +1,4 @@
-const { Meetups } = require('../models');
+const { Meetups, User, Profile } = require('../models');
 
 const router= require('express').Router();
 
@@ -46,6 +46,27 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.get('/posts/:id', async (req, res) => {
+    try{
+      const pData = await postRouts.findByPk(req.params.id, {
+        include: [
+          User,
+          {
+            model: Profile,
+            include: [User],
+          },
+        ],
+      });
+
+      if (pData) {
+        const post = pData.get({ plain: true });
+      } else {
+        res.status(404).end();
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 
 module.exports= router;
