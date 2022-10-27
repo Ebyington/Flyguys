@@ -24,6 +24,22 @@ router.post('/', async (req, res) => {
         res.status(400).json(err);
     }
 });
-
+router.delete('/:id', async (req, res) => {
+    try {
+      const [aRows] = Posts.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+  
+      if (aRows > 0) {
+        res.status(200).end();
+      } else {
+        res.status(404).end();
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 module.exports = router;
