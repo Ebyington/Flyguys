@@ -1,5 +1,16 @@
 const router = require('express').Router();
-const { Meetups } = require('../../models/');
+const { Meetups, User} = require('../../models/');
+
+router.get('/', async (req, res) => {
+  try {
+      const UMeetups = await Meetups.findAll({
+          include: [User],
+      });
+      res.status(200).json(UMeetups);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
 
 
 router.post('/', async (req, res) => {

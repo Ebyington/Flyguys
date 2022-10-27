@@ -1,4 +1,4 @@
-const { Meetups, User, Profile } = require('../models');
+const { Meetups, User, Profile, Posts } = require('../models');
 
 const router= require('express').Router();
 
@@ -13,9 +13,9 @@ router.get('/', async (req, res) => {
         
       });
   
-      const posts = pData.map((post) => post.get({ plain: true }));
+      const meetup = pData.map((Meetups) => Meetups.get({ plain: true }));
   
-      res.render('MeetupAll', { posts });
+      res.render('MeetupAll', { meetup });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -25,19 +25,13 @@ router.get('/', async (req, res) => {
   router.get('/meetup/:id', async (req, res) => {
     try {
       const pData = await Meetups.findByPk(req.params.id, {
-        include: [
-            User,
-            {
-              model: Profile,
-              include: [User],
-            },
-          ],
+        include: [User],
       });
   
       if (pData) {
-        const post = pData.get({ plain: true });
+        const meetup = pData.get({ plain: true });
   
-        res.render('singleMeetup', { post });
+        res.render('singleMeetup', { meetup });
       } else {
         res.status(404).end();
       }
@@ -46,20 +40,31 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.get('/', async (req, res) => {
+    try {
+      const pData = await Posts.findAll({
+        include: [User],
+        
+      });
+  
+      const userPost = pData.map((Posts) => Posts.get({ plain: true }));
+  
+      res.render('PostAll', { userPost });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+
   router.get('/posts/:id', async (req, res) => {
     try{
-      const pData = await postRouts.findByPk(req.params.id, {
-        include: [
-          User,
-          {
-            model: Profile,
-            include: [User],
-          },
-        ],
+      const pData = await Posts.findByPk(req.params.id, {
+        include: [User],
       });
 
       if (pData) {
-        const post = pData.get({ plain: true });
+        const userpost = pData.get({ plain: true });
+        res.render('singlepost', { userpost });
       } else {
         res.status(404).end();
       }
