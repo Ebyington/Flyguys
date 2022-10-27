@@ -5,6 +5,7 @@ const Profile = require('./profile');
 // fixed logic in relationships, added profile
 User.hasMany(Posts, {
     foreignKey: 'user_id',
+    onDelete: "CASCADE"
 });
 
 Posts.belongsTo(User, {
@@ -12,6 +13,7 @@ Posts.belongsTo(User, {
 });
 Meetups.belongsTo(User, {
     foreignKey: 'user_id',
+    onDelete: "CASCADE"
 });
 
 User.hasMany(Meetups, {

@@ -1,51 +1,47 @@
 const router= require('express').Router();
-const { Post, Meetups } = require('../models');
+const { User, Profile, Post, Meetups } = require('../models');
 
 // const withAuth = require('../utils/auth');
 // needs withAuth before deploy, left out for db testing
- router.get('/', async (req, res) => {
+ router.get('/:id', async (req, res) => {
     try {
-        const postData = await Post.finAll({
-            where: {
-                user_id: req.user_id,
-            },
-        });
+
+        const profData = await User.findByPk(
+          req.params.id
+        );
+        res.status(400).json(profData);
         const posts = postData.map((post) => post.get({ plain: true}));
-
-        res.render('postHistory', {
-            layout: 'dashboard',
-            posts,
-        });
-        
-    } catch (err) {
-        res.redirect('login');
-    }
- });
- router.get('/', async (req, res) => {
-    try {
-        const meetData = await Meetups.finAll({
+        const meetData = await Meetups.findAll({
             where: {
-                user_id: req.user_id,
+                user_id: req.body.user_id,
             },
         });
-        const meetups = meetData.map((Meetups) => meetups.get({ plain: true}));
+        const meetups = meetData.map((meetups) => meetups.get({ plain: true}));
+        // const profile = 
 
-        res.render('postHistory', {
-            layout: 'dashboard',
-            Meetups,
+        res.render('dashboard', {
+            meetups,
+            posts,
+            profile,
+            user,
+        
         });
         
     } catch (err) {
-        res.redirect('login');
+      // add in when login auth is verified
+        // res.redirect('login');
+        res.status(500).json(err);
     }
  });
-// new post get for user profile dash
+
+// // new post get for user profile dash
  router.get('/new', (req, res) => {
     res.render('newpost', {
         layout: 'dashboard',
     });
  });
 
+//  delete post
  router.delete('/:id', async (req, res) => {
     try {
       const [aRows] = Post.destroy({
