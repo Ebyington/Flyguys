@@ -10,10 +10,13 @@ router.post('/', async (req, res) => {
             email: req.body.email,
             password: req.body.password,
         });
-        // req.session.save(() => {
-        //     req.session.loggedIn = true;
+        req.session.save(() => {
+            req.session.user_id= userDB.id;
+            req.session.username= userDB.username;
+            req.session.email= userDB.email;
+            req.session.loggedIn = true;
             res.status(200).json(userDB);
-        // });
+        });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -33,14 +36,22 @@ router.post('/login', async (req, res) => {
             return;
         }
 
+        const validPassword = userDB.checkPassword(req.body.password);
+
+        if (!validPassword) {
+          res.status(400).json({ message: 'No user account found!' });
+          return;
+        }
     req.session.save(() => {
+        req.session.user_id= userDB.id;
+        req.session.username= userDB.username;
+        req.session.email= userDB.email;
         req.session.loggedIn = true;
-        res 
-        .status(200).json({ user: userDB, message: 'You are logged in, Welcome!' });
+        res.status(200).json({ userDB, message: 'You are logged in, Welcome!' });
     });
     } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
+        
+        res.status(500).json({ message: 'No user account found!' });
     }
 });
 
