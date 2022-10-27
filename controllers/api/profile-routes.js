@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Posts, User} = require('../../models/');
+const { Profile, User} = require('../../models/');
 
 router.get('/', async (req, res) => {
   try {
-      const userPost = await Posts.findAll({
+      const userPro = await Profile.findAll({
           include: [User],
       });
-      res.status(200).json(userPost);
+      res.status(200).json(userPro);
   } catch (err) {
       res.status(500).json(err);
   }
@@ -17,8 +17,8 @@ router.post('/', async (req, res) => {
     const body = req.body;
   
     try {
-      const newPost = await Posts.create({ ...body, user_id: req.user_id });
-      res.json(newPost);
+      const newProfile = await Profile.create({ ...body, user_id: req.user_id });
+      res.json(newProfile);
     } catch (err) {
       res.status(500).json(err);
     }
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
   
   router.put('/:id', async (req, res) => {
     try {
-      const [aRows] = await Posts.update(req.body, {
+      const [aRows] = await Profile.update(req.body, {
         where: {
           id: req.params.id,
         },
@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
   
   router.delete('/:id', async (req, res) => {
     try {
-      const [aRows] = Posts.destroy({
+      const [aRows] = Profile.destroy({
         where: {
           id: req.params.id,
         },

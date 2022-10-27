@@ -5,6 +5,13 @@ class Meetups extends Model{}
 
 Meetups.init(
     {
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
         title: DataTypes.STRING,
         description: DataTypes.STRING,
         location: DataTypes.STRING,
@@ -17,6 +24,6 @@ Meetups.init(
         timestamps: true,
         modelName: 'Meetups'
     }
-)
+);
 
 module.exports= Meetups;
