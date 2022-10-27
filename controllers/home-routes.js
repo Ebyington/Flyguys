@@ -1,4 +1,4 @@
-const { Meetups } = require('../models');
+const { Meetups, User } = require('../models');
 
 const router= require('express').Router();
 
@@ -46,6 +46,14 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.post('/postRoutes', async (req, res) => {
+    try{
+      const pData = await User.create(req.body);
+      res.status(200).json(pData);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
 
 
 module.exports= router;
