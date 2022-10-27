@@ -1,15 +1,15 @@
 const router= require('express').Router();
 const { User, Profile, Posts, Meetups } = require('../models');
 
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 // needs withAuth before deploy, left out for db testing
 
 ///// Get users POsts,Profile, Meetups//////////
- router.get('/', async (req, res) => {
+ router.get('/', withAuth, async (req, res) => {
     try {
 
         const profData = await Profile.findAll({
-            where:{user_id: req.user_id},
+            where:{user_id: req.session.user_id},
         });
         
         const posts = profData.map((Profile) => Profile.get({ plain: true}));
@@ -18,15 +18,15 @@ const { User, Profile, Posts, Meetups } = require('../models');
             posts,
         });
     } catch (err) {
-        // res.redirect('login');
+        res.redirect('login');
         res.status(500).json(err);
     }
  });
- router.get('/', async (req, res) => {
+ router.get('/', withAuth, async (req, res) => {
     try {
 
         const profData = await Posts.findAll({
-            where:{user_id: req.user_id},
+            where:{user_id: req.session.user_id},
         });
         
         const posts = profData.map((Posts) => Posts.get({ plain: true}));
@@ -35,16 +35,16 @@ const { User, Profile, Posts, Meetups } = require('../models');
             posts,
         });
     } catch (err) {
-        // res.redirect('login');
+        res.redirect('login');
         res.status(500).json(err);
     }
  });
 
- router.get('/', async (req, res) => {
+ router.get('/', withAuth, async (req, res) => {
     try {
 
         const profData = await Meetups.findAll({
-            where:{user_id: req.user_id},
+            where:{user_id: req.session.user_id},
         });
         
         const posts = profData.map((Meetups) => Meetups.get({ plain: true}));
@@ -53,32 +53,32 @@ const { User, Profile, Posts, Meetups } = require('../models');
             posts,
         });
     } catch (err) {
-        // res.redirect('login');
+        res.redirect('login');
         res.status(500).json(err);
     }
  });
 
 
 // // opens handlebars views to a user form to allow a new Meetup, Post, Profile
-router.get('/newMeetup', (req, res) => {
+router.get('/newMeetup', withAuth,(req, res) => {
     res.render('newMeetup', {
         layout: 'dashboard',
     });
  });
- router.get('/newPost', (req, res) => {
+ router.get('/newPost', withAuth, (req, res) => {
     res.render('newPost', {
         layout: 'dashboard',
     });
  });
 
- router.get('/newProfile', (req, res) => {
+ router.get('/newProfile',withAuth, (req, res) => {
     res.render('newProfile', {
         layout: 'dashboard',
     });
  });
 
 /////// edit Posts///////
- router.get('/edit/:id', async (req, res) => {
+ router.get('/edit/:id', withAuth, async (req, res) => {
     try {
       const postData = await Posts.findByPk(req.params.id);
   
@@ -97,7 +97,7 @@ router.get('/newMeetup', (req, res) => {
     }
   });
 /////// edit Meetups///////
-  router.get('/edit/:id', async (req, res) => {
+  router.get('/edit/:id', withAuth, async (req, res) => {
     try {
       const postData = await Meetups.findByPk(req.params.id);
   
@@ -117,7 +117,7 @@ router.get('/newMeetup', (req, res) => {
   });
 
   //// edit Profile//////
-  router.get('/edit/:id', async (req, res) => {
+  router.get('/edit/:id', withAuth, async (req, res) => {
     try {
       const postData = await Profile.findByPk(req.params.id);
   
