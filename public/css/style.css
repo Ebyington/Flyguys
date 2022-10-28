@@ -3,7 +3,10 @@
  body {
    height: 100%;
  }
-
+.logoGIF {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 .video-background {
   background: #000;
   position: relative;
