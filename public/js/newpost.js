@@ -1,14 +1,14 @@
-
-const title = document.querySelector("#title");
-let droneModel= document.querySelector("#droneModel").value;
-let description= document.querySelector("#description").value;
-let tags = document.querySelector("#tags").value;
-const submitBtn = document.querySelector("#submitbtn");
-
-const newPost = async (event) => {
+const newPost = async function(event){
     event.PreventDefault();
 
-const reponse =  await fetch(`/api/posts`, {
+
+const droneModel= document.querySelector("#droneModel").value;
+const description= document.querySelector("#description").value;
+const tags = document.querySelector("#tags").value;
+
+
+
+ await fetch(`/api/posts`, {
     method: `POST`,
     body: JSON.stringify({
         droneModel,
@@ -16,13 +16,10 @@ const reponse =  await fetch(`/api/posts`, {
         tags,
     }),
     headers: { 'Content-Type': 'application/json' },
-    if response.ok)
-    {document.location.replace("/")
-    } else {
-        alert(response.statusText)
-    }
 });
+document.location.replace('/dashboard');
 }
 
 
-submitBtn.addEventListener("click", newPost);
+document
+.querySelector('#newPostForm').addEventListener("click", newPost);
