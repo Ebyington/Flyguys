@@ -4,6 +4,17 @@
    height: 100%;
  }
 /* Style the video: 100% width and height to cover the entire window */
+.content {
+  position: fixed;
+  /* bottom: 0; /
+  top: 30%;
+  / background: rgba(0, 0, 0, 0.5); */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-size: 100px;
+}
 
 .video-background {
   background: #000;
