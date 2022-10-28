@@ -1,9 +1,9 @@
-<div>
-    <div>
+<div class="newPost">
+    <div class="newPost-header">
         <h2>Drone Post:</h2>
     </div>
     <div>
-        <form action="/action_page.php">
+        <form id="newPostForm" action="/action_page.php">
             <label for="title"> Title: </label>
             <textarea id="title" name="titleTextarea" rows="1"></textarea>
 
@@ -17,7 +17,9 @@
 
             <label for="tags">Tags:</label>
             <textarea id="text" name="tagText"></textarea>
-            <button id="submitbtn"> Submit </button> 
+            <button type="button" id="submitbtn"> Submit Post! </button> 
         </form>
     </div>
 </div>
+
+<script src="/js/newpost.js"></script>
