@@ -6,13 +6,11 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
     try {
         const userDB = await User.create({
-            username: req.body.username, 
             email: req.body.email,
             password: req.body.password,
         });
         req.session.save(() => {
             req.session.user_id= userDB.id;
-            req.session.username= userDB.username;
             req.session.email= userDB.email;
             req.session.loggedIn = true;
             res.status(200).json(userDB);
@@ -31,8 +29,7 @@ router.post('/login', async (req, res) => {
             },
         });
         if (!userDB) {
-            res
-             .status(400).json({ message: 'Invalid email or password!' });
+            res.status(400).json({ message: 'Invalid email or password!' });
             return;
         }
 
@@ -44,7 +41,6 @@ router.post('/login', async (req, res) => {
         }
     req.session.save(() => {
         req.session.user_id= userDB.id;
-        req.session.username= userDB.username;
         req.session.email= userDB.email;
         req.session.loggedIn = true;
         res.status(200).json({ userDB, message: 'You are logged in, Welcome!' });

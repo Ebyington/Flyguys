@@ -1,7 +1,5 @@
-<!-- Button trigger modal -->
-<!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Click Here To Login Or Signup!
+  Click Here To Signup!
 </button>
 
 <!-- Modal -->
@@ -9,25 +7,25 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Sign Up!</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="login-form">
-            
+        <form id="signup-form">
+           
             <div>
-                <label for="email-login">Email</label>
-                <input type="text" id="email-login" />
+                <label for="email-signup">Email:</label>    
+                <input type="text" id="email-signup" />
             </div>
             <div>
-                <label for="password-login" class="form-label">Password:</label>
-                <input type="password" id="password-login" />
+                <label for="password-signup" class="form-label">Password:</label>
+                <input type="password" id="password-signup" />
             </div>   
       </div>
       <div class="modal-footer">
-        <button type="submit" id="login-btn "class="btn btn-primary">Login!</button>
-        <button type="button"  class="btn btn-primary"><a type="button" href="/signup">Sign up!</a></button>
-        <script src="/js/login.js"></script>
+        <button type="submit" id="login-btn "class="btn btn-primary">Sign up!</button>
+        <button type="button" href="/login" class="btn btn-primary">Login</button>
+        <script src="/js/signup.js"></script>
          </form>
       </div>
     </div>
