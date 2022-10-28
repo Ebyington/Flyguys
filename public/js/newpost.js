@@ -1,8 +1,8 @@
 
 const title = document.querySelector("#title");
-let droneModel= document.querySelector("#droneModel");
-let description= document.querySelector("#description");
-let tags = document.querySelector("#tags");
+let droneModel= document.querySelector("#droneModel").value;
+let description= document.querySelector("#description").value;
+let tags = document.querySelector("#tags").value;
 const submitBtn = document.querySelector("#submitbtn");
 
 const newPost = async (event) => {
@@ -15,9 +15,9 @@ await fetch(`/api/posts`, {
         description,
         tags,
     }),
-    headers: { }
-})
-
+    headers: { 'Content-Type': 'application/json' }
+});
+    return //should we return a message that post was submitted
 }
 
 
