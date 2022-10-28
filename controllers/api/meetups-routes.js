@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Meetups, User} = require('../../models/');
+const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/',  async (req, res) => {
   try {
       const UMeetups = await Meetups.findAll({
           include: [User],
@@ -13,18 +14,18 @@ router.get('/', async (req, res) => {
 });
 
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     const body = req.body;
   
     try {
-      const newMeetup = await Meetups.create({ ...body, user_id: req.user_id });
+      const newMeetup = await Meetups.create({ ...body, user_id: req.session.user_id });
       res.json(newMeetup);
     } catch (err) {
       res.status(500).json(err);
     }
   });
   
-  router.put('/:id', async (req, res) => {
+  router.put('/:id', withAuth, async (req, res) => {
     try {
       const [aRows] = await Meetups.update(req.body, {
         where: {
@@ -42,7 +43,7 @@ router.post('/', async (req, res) => {
     }
   });
   
-  router.delete('/:id', async (req, res) => {
+  router.delete('/:id', withAuth, async (req, res) => {
     try {
       const [aRows] = Meetups.destroy({
         where: {
