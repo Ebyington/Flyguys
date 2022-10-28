@@ -1,3 +1,9 @@
-{{username}}
+{{#if loggedIn}}
+<section class="new-content">
+    {{username}}
+    {{content}}
+</section>
 
-{{content}}
+{{else}}
+<p>Please login to make a post on our site!</p>
+{{/if}}
