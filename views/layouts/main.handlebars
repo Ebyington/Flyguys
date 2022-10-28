@@ -30,7 +30,7 @@
           <a class="nav-link" href="/dashboard">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link"  href="/login">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link href="#" id="logout-link">Logout</a>
@@ -41,16 +41,27 @@
 </nav>
 
 {{!-- temporary video link, import new or user --}}
-<div class="video-background">
+{{!-- <div class="video-background">
     <div class="video-foreground">
       <iframe src="https://www.youtube.com/embed/HWqcBlJ8YWo?controls=0&showinfo=0&autoplay=1&loop=1" frameborder="0" allowfullscreen></iframe>
     </div>
-  </div>
+  </div> --}}
 
 <!-- Optional: some overlay text to describe the video -->
-<div class="content">
-  <h1>SHARE YOUR ADVENTURES @FLYGUYS!</h1>
+{{!-- <div class="content">
+  <h1>SHARE YOUR ADVENTURES @FLYGUYS!</h1> --}}
   {{!-- <p>Share your Drone Video & Events!</p> --}}
  
   
 </div>
+  <main class="row">
+    {{{body}}}
+    
+  </main>
+
+
+
+</body>
+
+</html>
+<script src="/js/logout.js"></script>
