@@ -8,16 +8,20 @@ const submitBtn = document.querySelector("#submitbtn");
 const newPost = async (event) => {
     event.PreventDefault();
 
-await fetch(`/api/posts`, {
+const reponse =  await fetch(`/api/posts`, {
     method: `POST`,
     body: JSON.stringify({
         droneModel,
         description,
         tags,
     }),
-    headers: { 'Content-Type': 'application/json' }
+    headers: { 'Content-Type': 'application/json' },
+    if response.ok)
+    {document.location.replace("/")
+    } else {
+        alert(response.statusText)
+    }
 });
-    return //should we return a message that post was submitted
 }
 
 
