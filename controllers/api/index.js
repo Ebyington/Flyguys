@@ -7,9 +7,9 @@ const postRoutes = require('./postsRoutes');
 const meetRoutes = require('./meetups-routes');
 const ProfileRoutes = require('./profile-routes');
 
-router.use('/user', userRoutes);
-router.use('/meetups', meetRoutes);
-router.use('/posts', postRoutes);
-router.use('/profile', ProfileRoutes);
+router.use('/User', userRoutes);
+router.use('/Meetups', meetRoutes);
+router.use('/Posts', postRoutes);
+router.use('/Profile', ProfileRoutes);
 
 module.exports = router;
