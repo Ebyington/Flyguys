@@ -15,11 +15,13 @@ router.get('/', async (req, res) => {
 
 
 router.post('/', withAuth, async (req, res) => {
-    const body = req.body;
+  const body = req.body;
   
     try {
+      
       const newPost = await Posts.create({ ...body, user_id: req.session.user_id });
       res.json(newPost);
+    
     } catch (err) {
       res.status(500).json(err);
     }
