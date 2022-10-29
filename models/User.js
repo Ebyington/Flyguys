@@ -20,7 +20,11 @@ User.init(
             allowNull: false,
             primaryKey: true,
         },
-        
+       username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+       },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -33,7 +37,6 @@ User.init(
                 type: DataTypes.STRING,
                 allowNull: false,
                 validate: {
-                    len: [8],
                     isAlphanumeric: true,
                 },
 
