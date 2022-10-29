@@ -22,4 +22,4 @@ document.location.replace('/dashboard');
 
 
 document
-.querySelector('#newPostForm').addEventListener("click", newPost);
+.querySelector('#submitbtn').addEventListener("click", newPost);
