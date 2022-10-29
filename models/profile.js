@@ -12,7 +12,11 @@ Profile.init(
                 key: 'id',
             },  
         },
-        username: DataTypes.STRING,
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+           },
         posthistory: DataTypes.STRING,
         postcount: DataTypes.INTEGER,
         socialmedia: DataTypes.STRING,
