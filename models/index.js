@@ -1,7 +1,7 @@
 const User = require('./User');
 const Posts = require('./Posts');
 const Meetups = require('./Meetups');
-const Profile = require('./profile');
+const Profile = require('./Profile');
 // fixed logic in relationships, added profile
 User.hasMany(Posts, {
     foreignKey: 'user_id',
