@@ -31,9 +31,9 @@
   .video-foreground { width: 300%; left: -100%; }
 } 
 
-a:link {
+/* a:link {
   color: #C1121F;
-}
+} */
 
 a:hover {
   color: #780000;
