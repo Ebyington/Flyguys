@@ -2,22 +2,23 @@ const newMeetup = async function (event) {
     event.preventDefault();
 
 
-    const title = document.querySelector('#title').value.trim();
-    const description = document.querySelector('#description').value.trim();
-    const location = document.querySelector("#location").value.trim();
+    const title = document.querySelector('input[name="title"]').value;
+    const description = document.querySelector('textarea[name="description"]').value;
+    const location = document.querySelector('input[name="location"]').value;
+    const image = document.querySelector('input[name="image"]').value;
 
-    await fetch(`/api/meetups`, {
+    await fetch(`/api/Meetups`, {
         method: `POST`,
         body: JSON.stringify({
             title,
-            location,
             description,
+            location,
+            image,
+    
         }),
         headers: { 'Content-Type': 'application/json' },
     });
     document.location.assign('/dashboard');
     }
 
-const submit = document.getElementById("submitbtn");
-
-submit.addEventListener("click", newMeetup);
+    document.querySelector('#newMeetupForm').addEventListener("submit", newMeetup);
