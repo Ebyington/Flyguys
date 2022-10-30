@@ -22,15 +22,20 @@ const withAuth = require('../utils/auth');
 //  });
  router.get('/', withAuth, async (req, res) => {
     try {
-
+        
         const profData = await Posts.findAll({
             where:{user_id: req.session.user_id},
         });
-        
+        const mData = await Meetups.findAll({
+          where:{user_id: req.session.user_id},
+        });
         const posts = profData.map((Posts) => Posts.get({ plain: true}));
+        const meetups = mData.map((Meetups) => Meetups.get({ plain: true}));
         res.render('allPostsAdmin', {
             layout: 'dashboard',
             posts,
+            meetups,
+          
         });
     } catch (err) {
         res.redirect('login');
@@ -38,23 +43,7 @@ const withAuth = require('../utils/auth');
     }
  });
 
-//  router.get('/', withAuth, async (req, res) => {
-//     try {
 
-//         const profData = await Meetups.findAll({
-//             where:{user_id: req.session.user_id},
-//         });
-        
-//         const posts = profData.map((Meetups) => Meetups.get({ plain: true}));
-//         res.render('allPostsAdmin', {
-//             layout: 'dashboard',
-//             posts,
-//         });
-//     } catch (err) {
-//         res.redirect('login');
-//         res.status(500).json(err);
-//     }
-//  });
 
 
 // // opens handlebars views to a user form to allow a new Meetup, Post, Profile
@@ -95,16 +84,16 @@ router.get('/newMeetup', withAuth,(req, res) => {
     }
   });
 /////// edit Meetups///////
-  router.get('/edit/:id', withAuth, async (req, res) => {
+  router.get('/editMeetup/:id', withAuth, async (req, res) => {
     try {
       const postData = await Meetups.findByPk(req.params.id);
   
       if (postData) {
-        const post = postData.get({ plain: true });
+        const meetups = postData.get({ plain: true });
   
         res.render('editMeetup', {
           layout: 'dashboard',
-          post,
+          meetups,
         });
       } else {
         res.status(404).end();

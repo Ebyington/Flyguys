@@ -8,7 +8,7 @@ const description= document.querySelector('textarea[name="description"]').value;
 
 
 
- await fetch(`/api/posts`, {
+ await fetch(`/api/Posts`, {
     method: `POST`,
     body: JSON.stringify({
         typeOfDrone,
