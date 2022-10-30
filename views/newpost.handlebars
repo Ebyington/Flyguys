@@ -1,25 +1,21 @@
-<div class="newPost">
-    <div class="newPost-header">
-        <h2>Drone Post:</h2>
-    </div>
-    <div>
-        <form id="newPostForm" action="/action_page.php">
-            <label for="title"> Title: </label>
-            <textarea id="title" name="titleTextarea" rows="1"></textarea>
+   
+ <div class="card">
+        <div class="card-header">
+            <h2>Drone Post:</h2>
+        </div>
+        <form id="newPostForm" class="card-body">
+           <label class="form-label" for="typeOfDrone">Type of Drone</label>
+           <input type="text" name="typeOfDrone" class="form-input" />
 
-            <input type="file" id="filePost" name="newPostFile">
+           <label class="form-label" for="tags">Tags</label>
+           <input type="text" name="tags" class="form-input" />
 
-            <label for="droneModel"> Drone Model:</label>
-            <textarea id="droneModel" name="droneModelTextarea" rows="1"></textarea>
+            <label class="form-label" for="description">Description</label>
+           <textarea name="description" class="form-input"></textarea>
 
-            <label for="description"> Description:</label>
-            <textarea id="description" name="descriptionText" rows="3"></textarea>
-
-            <label for="tags">Tags:</label>
-            <textarea id="tags" name="tagText"></textarea>
-            <button type="button" id="submitbtn"> Submit Post! </button> 
+            <button type="submit" class="btn"> Create Post! </button> 
         </form>
-    </div>
+  
 </div>
 
 <script src="/js/newpost.js"></script>
