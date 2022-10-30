@@ -1,17 +1,16 @@
 const newPost = async function(event){
-    event.PreventDefault();
+    event.preventDefault();
 
 
-const droneModel= document.querySelector("#droneModel").value;
+const typeofdrone= document.querySelector("#droneModel").value;
 const description= document.querySelector("#description").value;
 const tags = document.querySelector("#tags").value;
-
 
 
  await fetch(`/api/posts`, {
     method: `POST`,
     body: JSON.stringify({
-        droneModel,
+        typeofdrone,
         description,
         tags,
     }),
@@ -21,5 +20,8 @@ document.location.replace('/dashboard');
 }
 
 
-document
-.querySelector('#newPostForm').addEventListener("click", newPost);
+const submit = document.getElementById('submitbtn');
+
+submit.addEventListener("click", newPost);
+
+

@@ -7,13 +7,11 @@ const withAuth = require('../utils/auth');
 ///// Get users POsts,Profile, Meetups//////////
  router.get('/', withAuth, async (req, res) => {
     try {
-
         const profData = await Profile.findAll({
             where:{user_id: req.session.user_id},
         });
-        
         const posts = profData.map((Profile) => Profile.get({ plain: true}));
-        res.render('AdminAllProfile', {
+        res.render('allProfiles', {
             layout: 'dashboard',
             posts,
         });
@@ -30,7 +28,7 @@ const withAuth = require('../utils/auth');
         });
         
         const posts = profData.map((Posts) => Posts.get({ plain: true}));
-        res.render('AdminAllPosts', {
+        res.render('allPosts', {
             layout: 'dashboard',
             posts,
         });
@@ -48,7 +46,7 @@ const withAuth = require('../utils/auth');
         });
         
         const posts = profData.map((Meetups) => Meetups.get({ plain: true}));
-        res.render('AdminAllMeetups', {
+        res.render('allMeetups', {
             layout: 'dashboard',
             posts,
         });

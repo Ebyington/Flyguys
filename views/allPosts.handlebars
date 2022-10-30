@@ -1,10 +1,18 @@
-{{title}}
-<section class="user-img">
-  <img src="/images/{{userPost}}" alt="{{userPost.description}}">
-  <div class="img-details">
-    <p>{{username}}</p>
+<div>
+  <div>
+    <h1> Drone Life </h1>
   </div>
-  <section class="comments">
-    <p>{{comments}}</p>
+  <div>
+    <p>
+      {{user.username}}
+      {{posts.description}}
+      {{post.typeOfDrone}}
+      {{posts.tags}}
+    </p>
+  </div>
+
+  <section class="user-img">
+    {{!-- <img src="/images/{{userPost}}" alt="{{userPost.description}}"> --}}
   </section>
-</section>
+
+</div>

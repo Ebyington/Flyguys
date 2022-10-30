@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
   
       const meetup = pData.map((Meetups) => Meetups.get({ plain: true }));
   
-      res.render('MeetupAll', { meetup });
+      res.render('allMeetups', { meetup });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
       if (pData) {
         const meetup = pData.get({ plain: true });
   
-        res.render('singleMeetup', { meetup });
+        res.render('indivmeetup', { meetup });
       } else {
         res.status(404).end();
       }
@@ -49,7 +49,7 @@ router.get('/', async (req, res) => {
   
       const userPost = pData.map((Posts) => Posts.get({ plain: true }));
   
-      res.render('PostAll', { userPost });
+      res.render('allPosts', { userPost });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -64,7 +64,7 @@ router.get('/', async (req, res) => {
 
       if (pData) {
         const userpost = pData.get({ plain: true });
-        res.render('singlepost', { userpost });
+        res.render('indivpost', { userpost });
       } else {
         res.status(404).end();
       }
