@@ -1,29 +1,21 @@
-const { response } = require("express");
+const newProfile = async function (event) {
+    event.preventDefault();
 
-const newProfile = async function (profile) {
-    profile.PreventDefault();
+const username = document.querySelector('#username').value.trim();
+const socialmedia = document.querySelector('#socialmedia').value.trim();
 
-    const title = document.querySelector('#title').value.trim();
-    const description = document.querySelector('#description').value.trim();
-    const socialMedia = document.querySelector('#socialMedia').value.trim();
-
-    await fetch('api/posts', {
+// fetch not able to stringify data due to items needed for Profile Model
+    await fetch('/api/profile', {
         method: 'POST',
         body: JSON.stringify({
-            title,
-            location,
-            model,
+            username,
+            socialmedia,
         }),
         headers: {
-            'Content-Type': 'application/json'
-        },
+            'Content-Type': 'application/json'},
     });
-    if (response.ok) {
-        document.location.assign('/dashboard');
-    } else {
-        alert(response 500);
-    };
-};
+    document.location.assign('/dashboard');
+}
 
-document.querySelector('#profile').addEventListener('click', newProfile);
+document.getElementById('submitbtn').addEventListener('click', newProfile);
 

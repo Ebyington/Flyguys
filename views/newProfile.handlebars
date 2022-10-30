@@ -1,8 +1,26 @@
 <section class="profile">
-    <div class="profile-header"><h2>{{username}}'s Profile</h2></div>
-    <article>
+    <div class="profile-header">
+        <h2>{{username}} Create Your Profile</h2>
+    </div>
+    <div>
+        <form id="newProfile">
+            <label for ="username"> Username: </label><br></br>
+            <textarea id="username" name ="username" row="4"></textarea><br></br>
+            <label for ="socialmedia"> Social Media Handles: </label><br></br>
+            <textarea id="socialmedia" name ="socialmediatextarea" row="4"></textarea>
+            <button type="button" id="submitbtn"> Submit!</button>
+        </form>
+    </div>
+    <div>
+        <p>Location:</p>
+        <p>Posts:</p>
+        
+    </div>
+    {{!-- <article>
         <p>Location: {{location}}</p>
         <p> {{user-bio}}</p>
-        <p>Social: {{social-links}}</p>
-    </article>
+        <p>Social: {{social}}</p>
+    </article> --}}
 </section>
+
+<script src="/js/newProfile.js"></script>
