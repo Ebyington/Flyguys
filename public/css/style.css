@@ -40,3 +40,12 @@ a:hover {
   font-style: italic;
 }
 
+button {
+  background-color: #669BBC;
+  border: #6F797D 2px solid;
+}
+
+button:hover {
+  background-color: #6F797D;
+  border: #669BBC 4px solid;
+}
