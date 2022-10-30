@@ -1,30 +1,42 @@
 
- html,
- body {
+ html, body {
    height: 100%;
+   background-color: #003049;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
  }
+
 .logoGIF {
   flex-wrap: wrap;
-  fl
 }
 .video-background {
-  background: #000;
+  background: #000000;
   position: relative;
   top: 0; right: 0; bottom: 0; left: 0;
   overflow: hidden;
 }
-.video-foreground,
-.video-background iframe {
+
+.video-foreground, .video-background iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-
 }
+
 @media (min-aspect-ratio: 16/9) {
   .video-foreground { height: 300%; top: -100%; }
 }
+
 @media (max-aspect-ratio: 16/9) {
   .video-foreground { width: 300%; left: -100%; }
 } 
+
+/* a:link {
+  color: #C1121F;
+} */
+
+a:hover {
+  color: #780000;
+  font-style: italic;
+}
+
