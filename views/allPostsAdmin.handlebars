@@ -1,0 +1,9 @@
+<div class="card">
+  {{#each posts}}
+    <a class="list-item flex-row justify-space-between" href="/dashboard/edit/{{id}}">
+      <span>{{typeOfDrone}}</span>
+      <span>{{tags}}</span>
+       <span>{{description}}</span>
+    </a>
+  {{/each}}
+</div>

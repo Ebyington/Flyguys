@@ -5,21 +5,21 @@ const withAuth = require('../utils/auth');
 // needs withAuth before deploy, left out for db testing
 
 ///// Get users POsts,Profile, Meetups//////////
- router.get('/', withAuth, async (req, res) => {
-    try {
-        const profData = await Profile.findAll({
-            where:{user_id: req.session.user_id},
-        });
-        const posts = profData.map((Profile) => Profile.get({ plain: true}));
-        res.render('allProfiles', {
-            layout: 'dashboard',
-            posts,
-        });
-    } catch (err) {
-        res.redirect('login');
-        res.status(500).json(err);
-    }
- });
+//  router.get('/', withAuth, async (req, res) => {
+//     try {
+//         const profData = await Profile.findAll({
+//             where:{user_id: req.session.user_id},
+//         });
+//         const posts = profData.map((Profile) => Profile.get({ plain: true}));
+//         res.render('allPostsAdmin', {
+//             layout: 'dashboard',
+//             posts,
+//         });
+//     } catch (err) {
+//         res.redirect('login');
+//         res.status(500).json(err);
+//     }
+//  });
  router.get('/', withAuth, async (req, res) => {
     try {
 
@@ -28,7 +28,7 @@ const withAuth = require('../utils/auth');
         });
         
         const posts = profData.map((Posts) => Posts.get({ plain: true}));
-        res.render('allPosts', {
+        res.render('allPostsAdmin', {
             layout: 'dashboard',
             posts,
         });
@@ -38,23 +38,23 @@ const withAuth = require('../utils/auth');
     }
  });
 
- router.get('/', withAuth, async (req, res) => {
-    try {
+//  router.get('/', withAuth, async (req, res) => {
+//     try {
 
-        const profData = await Meetups.findAll({
-            where:{user_id: req.session.user_id},
-        });
+//         const profData = await Meetups.findAll({
+//             where:{user_id: req.session.user_id},
+//         });
         
-        const posts = profData.map((Meetups) => Meetups.get({ plain: true}));
-        res.render('allMeetups', {
-            layout: 'dashboard',
-            posts,
-        });
-    } catch (err) {
-        res.redirect('login');
-        res.status(500).json(err);
-    }
- });
+//         const posts = profData.map((Meetups) => Meetups.get({ plain: true}));
+//         res.render('allPostsAdmin', {
+//             layout: 'dashboard',
+//             posts,
+//         });
+//     } catch (err) {
+//         res.redirect('login');
+//         res.status(500).json(err);
+//     }
+//  });
 
 
 // // opens handlebars views to a user form to allow a new Meetup, Post, Profile
