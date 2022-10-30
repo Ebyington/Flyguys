@@ -21,6 +21,14 @@ Posts.init(
             type: DataTypes.STRING,
             allowNull: true
         },
+        imgurLink: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        videoLink: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         tags: {
             type: DataTypes.STRING,
             allowNull: false
