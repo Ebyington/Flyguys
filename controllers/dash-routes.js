@@ -11,7 +11,6 @@ const withAuth = require('../utils/auth');
             where:{user_id: req.session.user_id},
         });
         const posts = profData.map((Profile) => Profile.get({ plain: true}));
-        console.log(posts);
         res.render('allProfiles', {
             layout: 'dashboard',
             posts,
