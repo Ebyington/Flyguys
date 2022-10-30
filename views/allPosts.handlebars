@@ -1,0 +1,21 @@
+
+
+<main class="row">
+    
+ 
+<div class="card">
+  {{#each userPost}}
+  <article class="card">
+    <div class="card-header flex-row justify-space-between">
+      <h2>
+        <a href="/Posts/{{id}}">{{typeOfDrone}}</a>
+      </h2>
+      <span>{{typeOfDrone}}</span>
+      <span>{{tags}}</span>
+       <span>{{description}}</span>
+    </div>
+    
+  </article>
+  {{/each}}
+</div>
+ </main>

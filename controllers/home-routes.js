@@ -1,4 +1,4 @@
-const { Meetups, User, Profile, Posts } = require('../models');
+const { Meetups, User, Posts } = require('../models');
 
 const router= require('express').Router();
 
@@ -6,39 +6,39 @@ const router= require('express').Router();
 
 
 // get all posts for homepage
-router.get('/', async (req, res) => {
-    try {
-      const pData = await Meetups.findAll({
-        include: [User],
+// router.get('/', async (req, res) => {
+//     try {
+//       const pData = await Meetups.findAll({
+//         include: [User],
         
-      });
+//       });
   
-      const meetup = pData.map((Meetups) => Meetups.get({ plain: true }));
+//       const meetup = pData.map((Meetups) => Meetups.get({ plain: true }));
   
-      res.render('allMeetups', { meetup });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+//       res.render('allMeetups', { meetup });
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
 
-  router.get('/meetup/:id', async (req, res) => {
-    try {
-      const pData = await Meetups.findByPk(req.params.id, {
-        include: [User],
-      });
+//   router.get('/meetup/:id', async (req, res) => {
+//     try {
+//       const pData = await Meetups.findByPk(req.params.id, {
+//         include: [User],
+//       });
   
-      if (pData) {
-        const meetup = pData.get({ plain: true });
+//       if (pData) {
+//         const meetup = pData.get({ plain: true });
   
-        res.render('indivmeetup', { meetup });
-      } else {
-        res.status(404).end();
-      }
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+//         res.render('indivmeetup', { meetup });
+//       } else {
+//         res.status(404).end();
+//       }
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
   router.get('/', async (req, res) => {
     try {
@@ -63,8 +63,8 @@ router.get('/', async (req, res) => {
       });
 
       if (pData) {
-        const userpost = pData.get({ plain: true });
-        res.render('indivpost', { userpost });
+        const userPost = pData.get({ plain: true });
+        res.render('indivpost', { userPost });
       } else {
         res.status(404).end();
       }
