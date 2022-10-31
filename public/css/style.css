@@ -12,7 +12,7 @@ a:hover {
   height: 800px;
 }
 .MeetupCross{
-  background-image: url('../image/pubg-drone-4k-lh.jpg');
+  background-image: url('/public/image/BG.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
