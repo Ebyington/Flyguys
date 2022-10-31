@@ -1,8 +1,13 @@
 <article class="card">
     <div class="card-header flex-row justify-space-between">
-      <h2>{{userPost.typeOfDrone}}</h2>
-       <span>{{userPost.tags}}</span>
+      <span><img src="{{image}}" class="card-img-top" alt="...">
+      <iframe width="75%" height="auto" src="{{link}}" title="YouTube player" allowfullscreen></iframe>
+      </span>
+      <span><h2>{{username}}</h2></span>
        <span>{{userPost.description}}</span>
+       <span><h2>{{userPost.typeOfDrone}}</h2>
+       </span>
+       <span><p>{{tags}}</p></span>
     </div>
   </article>
 
