@@ -1,5 +1,11 @@
 
-<div class="card">
+<div class="row g-0 text-center">
+  <div class="col-sm-4 col-md-4"></div>
+  
+<div class="col-sm-4 col-md-4">
+
+
+<div class="edit card">
   <div class="card-header">
     <h2>Edit Post</h2>
   </div>
@@ -8,23 +14,25 @@
 
      <label class="form-label" for="typeOfDrone">Type of Drone</label>
     <input type="text" name="typeOfDrone" value="{{post.typeOfDrone}}" class="form-input" />
-
-    <label class="form-label" for="tags">Tags</label>
+<br>
+    <label class="form-label" for="tags">Search Tags</label>
     <input type="text" name="tags" value="{{post.tags}}" class="form-input" />
-
+<br>
      <label class="form-label" for="image">Image Url</label>
     <input type="text" name="image" value="{{post.image}}" class="form-input" />
-
+<br>
      <label class="form-label" for="videoLink">Video Link</label>
     <input type="text" name="videoLink" value="{{post.videoLink}}" class="form-input" />
-
+<br>
     <label class="form-label" for="description">Description</label>
     <textarea name="description" class="form-input">{{post.description}}</textarea>
-
+<br>
     <button type="submit" class="btn">Update</button>
 
     <button type="button" id="deletebtn" class="btn">Delete</button>
   </form>
 </div>
-
+</div>
+<div class="col-4 col-md-4"></div>
+</div>
 <script src="/js/editpost.js"></script>

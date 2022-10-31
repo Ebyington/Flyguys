@@ -1,26 +1,34 @@
-<div class="card">
+<div class="row g-0 text-center">
+  <div class="col-sm-4 col-md-4"></div>
+  
+<div class="col-sm-4 col-md-4">
+
+
+<div class="edit card">
   <div class="card-header">
     <h2>Edit Meetups!</h2>
   </div>
   <form id="editMeetup" class="card-body">
     <input type="hidden" name="post-id" value="{{meetups.id}}" />
 
-     <label class="form-label" for="title">Title:</label>
+     <label class="form-label" for="title">Event Title</label>
     <input type="text" name="title" value="{{meetups.title}}" class="form-input" />
-
+<br>
     <label class="form-label" for="location">Location</label>
     <input type="text" name="location" value="{{meetups.location}}" class="form-input" />
-
+<br>
     <label class="form-label" for="image">Image Url</label>
     <input type="text" name="image" value="{{meetups.image}}" class="form-input" />
-
+<br>
     <label class="form-label" for="description">Description</label>
     <textarea name="description" class="form-input">{{meetups.description}}</textarea>
-
+<br>
     <button type="submit" class="btn">Update</button>
 
     <button type="button" id="deletebtn" class="btn">Delete</button>
   </form>
 </div>
-
+</div>
+<div class="col-4 col-md-4"></div>
+</div>
 <script src="/js/editmeetup.js"></script>

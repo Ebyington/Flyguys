@@ -1,4 +1,11 @@
-<div class="card">
+
+<div class="row g-0 text-center">
+  <div class="col-sm-4 col-md-4"></div>
+  
+<div class="col-sm-4 col-md-4">
+
+
+<div class="edit card">
   <div class="card-header">
     <h2>Edit Post</h2>
   </div>
@@ -7,15 +14,17 @@
 
      <label class="form-label" for="username">Username:</label>
     <input type="text" name="username" value="{{profile.username}}" class="form-input" />
-
+<br>
     <label class="form-label" for="socialmedia">Social Media:</label>
     <input type="text" name="socialmedia" value="{{profile.socialmedia}}" class="form-input" />
-
+<br>
 
     <button type="submit" class="btn">Update</button>
 
     <button type="button" id="deletebtn" class="btn">Delete</button>
   </form>
 </div>
-
+</div>
+<div class="col-4 col-md-4"></div>
+</div>
 <script src="/js/editprofile.js"></script>
