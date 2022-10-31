@@ -1,4 +1,4 @@
-{{!-- 
+
 
 <main class="row">
     
@@ -18,15 +18,29 @@
   </article>
   {{/each}}
 </div>
- </main> --}}
+
+<div class="card">Events
+  {{#each meetup}}
+   <div class="card-header flex-row justify-space-between">
+      <h2>
+        <a href="/meetup/{{id}}">{{title}}</a>
+      </h2>
+      <span>{{location}}</span>
+      <span>{{image}}</span>
+       <span>{{description}}</span>
+    </a>
+  {{/each}}
+</div>
+
+ </main>
 
 {{!-- post cards, import uploaded media preview w heroku database --}}
-<main>
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/cards.css">
+{{!-- <main> --}}
+    {{!-- <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
+    {{!-- <link rel="stylesheet" href="/css/cards.css"> --}}
 
-  <section class="dark">
+  {{!-- <section class="dark">
     {{#each userPost}}
 	<div class="container py-4">
 		<h1 class="h1 text-center" id="pageHeaderTitle">Posts</h1>
@@ -54,4 +68,4 @@
 		
 	</div>
 </section>
-</main>
+</main> --}}
