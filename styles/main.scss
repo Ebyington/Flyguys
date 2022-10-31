@@ -8,34 +8,3 @@
     position: absolute;
     background: #f0f4f6;
 }
-
-.logoGIFstill:hover {
-    opacity: 0;
-}
-$color_bg: #f0f4f6;
-@mixin flexbox {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-*{
-    margin: 0;
-    padding: auto;
-    box-sizing: border-box;
-}
-.card{
-    @include flexbox();
-}
-.card-body{
-    height: 45rem;
-    width: 35rem;
-    margin: 1rem;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-
-    &:hover .image{
-        transform: scale(1.2);
-    }
-}
