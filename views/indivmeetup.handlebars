@@ -1,9 +1,8 @@
-<section class="container">
-    <h2 class="event-name">{{event.name}}</h2>
-    <p>{{event.description}}</p>
-    <!--Will double check naming conventions and such. Matches comign-->
-    {{reaction}} <!--Do we have an RSVP option?-->
-    <section class="comments">
-        {{username}} {{{comments}}}
-    </section>
-</section>
+ <article class="card">
+ <div class="card-header flex-row justify-space-between">
+      <h2>{{meetup.title}}</h2>
+       <span>{{meetup.location}}</span>
+       <span>{{meetup.image}}</span>
+       <span>{{meetup.description}}</span>
+    </div>
+  </article>

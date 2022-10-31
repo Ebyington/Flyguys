@@ -22,23 +22,23 @@ const router= require('express').Router();
 //   });
 
 
-//   router.get('/meetup/:id', async (req, res) => {
-//     try {
-//       const pData = await Meetups.findByPk(req.params.id, {
-//         include: [User],
-//       });
+  router.get('/meetup/:id', async (req, res) => {
+    try {
+      const pData = await Meetups.findByPk(req.params.id, {
+        include: [User],
+      });
   
-//       if (pData) {
-//         const meetup = pData.get({ plain: true });
+      if (pData) {
+        const meetup = pData.get({ plain: true });
   
-//         res.render('indivmeetup', { meetup });
-//       } else {
-//         res.status(404).end();
-//       }
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
+        res.render('indivmeetup', { meetup });
+      } else {
+        res.status(404).end();
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
   router.get('/', async (req, res) => {
     try {
@@ -46,10 +46,18 @@ const router= require('express').Router();
         include: [User],
         
       });
+      const mData = await Meetups.findAll({
+        include: [User],
+        
+      });
   
       const userPost = pData.map((Posts) => Posts.get({ plain: true }));
-  
-      res.render('allPosts', { userPost });
+      const meetup = mData.map((Meetups) => Meetups.get({ plain: true }));
+      res.render('allPosts', { 
+        userPost,
+        meetup,
+
+       });
     } catch (err) {
       res.status(500).json(err);
     }
