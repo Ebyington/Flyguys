@@ -1,27 +1,48 @@
 <main>
     
  <div class="row">
-<div class="card">
-  {{#each userPost}}
-  <article class="card">
-    <div class="card-header flex-row justify-space-between">
-      <h2>
-        <a href="/Posts/{{id}}">{{typeOfDrone}}</a>
-      </h2>
-      <span>{{typeOfDrone}}</span>
-      <span>{{tags}}</span>
-       <span>{{description}}</span>
+
+  <div class="row col-12">
+  
+     
+        {{#each userPost}}
+         <div class="card " style="width: 18rem;">
+            <img src="{{image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{typeOfDrone}}</h5>
+                <p class="card-text">{{description}}</p>
+                <p class="card-text">{{tags}}</p>
+                <a href="/Posts/{{id}}" class="btn btn-primary">View Post</a>
+              </div>
+          </div>
+        
+        {{/each}}
+
     </div>
-    
-  </article>
-  {{/each}}
-</div>
 
-</div>
 
-<div class="row rowHi MeetupCross">Meetups Image</div>
+<div class="row rowHi MeetupCross">
+ <div class="OpenStatement">Share your Meetups with Friends!</div>
+ </div>
 <div class="row">
-<div class="card">Events
+   <div class="row col-12">
+  
+     
+        {{#each meetup}}
+         <div class="card " style="width: 18rem;">
+            <img src="{{image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+               
+                <a href="/meetup/{{id}}" class="btn btn-primary">View Post</a>
+              </div>
+          </div>
+        
+        {{/each}}
+
+    </div>
+{{!-- <div class="card">Events
   {{#each meetup}}
    <div class="card-header flex-row justify-space-between">
       <h2>
@@ -32,6 +53,6 @@
        <span>{{description}}</span>
     </a>
   {{/each}}
-</div>
+</div> --}}
 </div>
  </main> 
