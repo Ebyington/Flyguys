@@ -7,14 +7,7 @@ html, body {
   .navbar{
     margin-bottom: 30px;
   }
-  .recipes{
-    color: whitesmoke;
-    padding: 20px;
-    font-size: 50px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: center;
-    text-shadow: 2px 2px 3px rgb(8, 8, 8);
-}
+
   .row{
     flex-direction: row;
     justify-content: space-evenly;
