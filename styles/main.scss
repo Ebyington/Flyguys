@@ -1,9 +1,13 @@
-.gif {
-    position: absolute;
-    align-items: center;
+.logoGIFstill,
+.logoGIF {
+  display: table-cell;
+  vertical-align: middle;
+  align-items: center;
 }
+
 .logoGIFstill {
-    background: #003049;
+  position: absolute;
+  background: #003049;
 }
 .logoGIFstill:hover {
     opacity: 0;

@@ -1,9 +1,12 @@
-.gif {
-  position: absolute;
+.logoGIFstill,
+.logoGIF {
+  display: table-cell;
+  vertical-align: middle;
   align-items: center;
 }
 
 .logoGIFstill {
+  position: absolute;
   background: #003049;
 }
 
