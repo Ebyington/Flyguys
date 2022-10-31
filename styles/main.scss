@@ -39,19 +39,4 @@ $color_bg: #f0f4f6;
     &:hover .image{
         transform: scale(1.2);
     }
-    & .image{
-        width: 100%;
-        position: absolute;
-        transition: 1s;
-    }
-    & input{
-        text-align: center;
-        position: relative;
-        color: $color_bg;
-        letter-spacing: .06rem;
-    }
-    & titleinput{
-        font-size: 3rem;
-        margin-top: 5rem;
-    }
 }

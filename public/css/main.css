@@ -39,18 +39,3 @@
 .card-body:hover .image {
   transform: scale(1.2);
 }
-.card-body .image {
-  width: 100%;
-  position: absolute;
-  transition: 1s;
-}
-.card-body input {
-  text-align: center;
-  position: relative;
-  color: #f0f4f6;
-  letter-spacing: 0.06rem;
-}
-.card-body titleinput {
-  font-size: 3rem;
-  margin-top: 5rem;
-}
