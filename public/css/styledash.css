@@ -33,3 +33,9 @@ html, body {
    text-decoration-color: whitesmoke;
    
   }
+  .edit{
+    box-sizing: 500px;
+    background-color: whitesmoke;
+    border-radius: 40px;
+  }
+  
