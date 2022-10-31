@@ -9,32 +9,3 @@
   position: absolute;
   background: #f0f4f6;
 }
-
-.logoGIFstill:hover {
-  opacity: 0;
-}
-
-* {
-  margin: 0;
-  padding: auto;
-  box-sizing: border-box;
-}
-
-.card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-body {
-  height: 45rem;
-  width: 35rem;
-  margin: 1rem;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-}
-.card-body:hover .image {
-  transform: scale(1.2);
-}
