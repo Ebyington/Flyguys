@@ -1,13 +1,10 @@
-.logoGIFstill,
-.logoGIF {
-  display: flex;
-  vertical-align: middle;
+.gif {
+  position: absolute;
   align-items: center;
 }
 
 .logoGIFstill {
-  position: absolute;
-  background: #f0f4f6;
+  background: #003049;
 }
 
 .logoGIFstill:hover {
