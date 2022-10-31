@@ -25,7 +25,6 @@ $color_bg: #f0f4f6;
     box-sizing: border-box;
 }
 .card{
-    height: 100vh;
     @include flexbox();
 }
 .card-body{
