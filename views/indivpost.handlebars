@@ -1,13 +1,13 @@
 <article class="card">
     <div class="card-header flex-row justify-space-between">
-      <span><img src="{{image}}" class="card-img-top" alt="...">
-      <iframe width="75%" height="auto" src="{{link}}" title="YouTube player" allowfullscreen></iframe>
+      <span><img src="{{userpost.image}}" class="card-img-top" alt="...">
+      <iframe width="75%" height="auto" src="{{userpost.videolink}}" title="YouTube player" allowfullscreen></iframe>
       </span>
       <span><h2>{{username}}</h2></span>
-       <span>{{userPost.description}}</span>
-       <span><h2>{{userPost.typeOfDrone}}</h2>
+       <span><p class="card-text">{{userPost.description}}</p></span>
+       <span><h4>{{userPost.typeOfDrone}}</h4>
        </span>
-       <span><p>{{tags}}</p></span>
+       <span><p class="card-text">{{tags}}</p></span>
     </div>
   </article>
 
