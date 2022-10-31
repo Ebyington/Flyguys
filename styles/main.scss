@@ -1,0 +1,14 @@
+.logoGIFstill,
+.logoGIF {
+    display: table-cell;
+    vertical-align: middle;
+    align-items: center;
+}
+.logoGIFstill {
+    position: absolute;
+    background: #f0f4f6;
+}
+
+.logoGIFstill:hover {
+    opacity: 0;
+}
