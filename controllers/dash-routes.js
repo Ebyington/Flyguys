@@ -4,22 +4,6 @@ const { User, Profile, Posts, Meetups } = require('../models');
 const withAuth = require('../utils/auth');
 // needs withAuth before deploy, left out for db testing
 
-///// Get users POsts,Profile, Meetups//////////
-//  router.get('/', withAuth, async (req, res) => {
-//     try {
-//         const profData = await Profile.findAll({
-//             where:{user_id: req.session.user_id},
-//         });
-//         const posts = profData.map((Profile) => Profile.get({ plain: true}));
-//         res.render('allPostsAdmin', {
-//             layout: 'dashboard',
-//             posts,
-//         });
-//     } catch (err) {
-//         res.redirect('login');
-//         res.status(500).json(err);
-//     }
-//  });
  router.get('/', withAuth, async (req, res) => {
     try {
         
@@ -29,12 +13,17 @@ const withAuth = require('../utils/auth');
         const mData = await Meetups.findAll({
           where:{user_id: req.session.user_id},
         });
+        const profileData = await Profile.findAll({
+          where:{user_id: req.session.user_id},
+      });
+        const profile = profileData.map((Profile) => Profile.get({ plain: true}));
         const posts = profData.map((Posts) => Posts.get({ plain: true}));
         const meetups = mData.map((Meetups) => Meetups.get({ plain: true}));
         res.render('allPostsAdmin', {
             layout: 'dashboard',
             posts,
             meetups,
+            profile,
           
         });
     } catch (err) {
@@ -104,16 +93,16 @@ router.get('/newMeetup', withAuth,(req, res) => {
   });
 
   //// edit Profile//////
-  router.get('/edit/:id', withAuth, async (req, res) => {
+  router.get('/editProfile/:id', withAuth, async (req, res) => {
     try {
       const postData = await Profile.findByPk(req.params.id);
   
       if (postData) {
-        const post = postData.get({ plain: true });
+        const profile = postData.get({ plain: true });
   
         res.render('editProfile', {
           layout: 'dashboard',
-          post,
+          profile,
         });
       } else {
         res.status(404).end();

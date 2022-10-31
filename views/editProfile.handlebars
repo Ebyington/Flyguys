@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Edit Post</h2>
+  </div>
+  <form id="editprofile" class="card-body">
+    <input type="hidden" name="post-id" value="{{profile.id}}" />
+
+     <label class="form-label" for="username">Username:</label>
+    <input type="text" name="username" value="{{profile.username}}" class="form-input" />
+
+    <label class="form-label" for="socialmedia">Social Media:</label>
+    <input type="text" name="socialmedia" value="{{profile.socialmedia}}" class="form-input" />
+
+
+    <button type="submit" class="btn">Update</button>
+
+    <button type="button" id="deletebtn" class="btn">Delete</button>
+  </form>
+</div>
+
+<script src="/js/editprofile.js"></script>
