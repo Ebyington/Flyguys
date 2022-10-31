@@ -11,6 +11,8 @@ As a member of the flyguys site, the user can have an interactive experience by 
 
 <img src= "public\image\flyguyreadmdsc1.png">
 <img src= "public\image\flyguyreadndsc2.png">
+<img src= "public\image\flyguyreadmdsc4.png">
+<img src= "public\image\flyguyreadmdsc3.png">
 
 
 ## Installation
