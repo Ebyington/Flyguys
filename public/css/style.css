@@ -23,3 +23,33 @@ a:hover {
   text-align: center;
   /* display: table; */
 }
+.OpenStatement{
+  color: white;
+  padding: 30px;
+  font-size: 70px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  justify-content: center;
+  
+  text-shadow: 2px 2px 3px rgb(8, 8, 8);
+  
+  margin-top: 10%;
+  
+}
+.row{
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card{
+  /* justify-content: space-between; */
+  background-color: whitesmoke;
+  margin: 10px;
+ 
+}
+a:link { text-decoration: none; }
+.profile{
+ color: whitesmoke;
+ text-decoration-line: none;
+ text-decoration-color: whitesmoke;
+ 
+}
