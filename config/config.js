@@ -4,7 +4,7 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
-
+// lines 10-18 for local testing, 20-36 for heroku deploy
 
 ////////// New Code format for sesions////////////
 // const sequelize = process.env.JAWSDB_URL

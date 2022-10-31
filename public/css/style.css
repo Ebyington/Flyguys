@@ -1,9 +1,9 @@
 
  html, body {
    height: 100%;
-   background-color: #003049;
+   background-color: #f0f4f6;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
- }
+ } 
 
 .logoGIF {
   flex-wrap: wrap;
