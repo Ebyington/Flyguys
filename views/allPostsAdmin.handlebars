@@ -1,33 +1,66 @@
-<div class="card">
-  {{#each posts}}
-    <a class="list-item flex-row justify-space-between" href="/dashboard/edit/{{id}}">
-      <span>{{typeOfDrone}}</span>
-      <span>{{tags}}</span>
-       <span>{{description}}</span>
-    </a>
-  {{/each}}
-</div>
+ 
 
 
+<div class="recipes row align-center">Your Shared Posts!</div>
 
-<div class="card">Events
-  {{#each meetups}}
-    <a class="list-item flex-row justify-space-between" href="/dashboard/editMeetup/{{id}}">
-      <span>{{title}}</span>
-      <span>{{location}}</span>
-      <span>{{image}}</span>
-       <span>{{description}}</span>
-    </a>
-  {{/each}}
-</div>
+<div class="row col-12">
+  
+     
+        {{#each posts}}
+         <div class="card " style="width: 18rem;">
+            <img src="{{image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{typeOfDrone}}</h5>
+                <p class="card-text">{{description}}</p>
+                <p class="card-text">{{tags}}</p>
+                <a href="/dashboard/edit/{{id}}" class="btn btn-primary">Edit Post</a>
+              </div>
+          </div>
+        
+        {{/each}}
+
+    </div>
+
+    <div class="recipes row align-center">Your Event Meetups!</div>
+
+<div class="row col-12">
+  
+     
+        {{#each meetups}}
+         <div class="card" style="width: 18rem;;">
+            <img src="{{image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+                <p class="card-text">{{location}}</p>
+                <a href="/dashboard/editMeetup/{{id}}" class="btn btn-primary">Edit Post</a>
+              </div>
+          </div>
+        
+        {{/each}}
+
+    </div>
+      
 
 
-<div class="card">Profile
+ 
+<div class="row col-12">
+             
   {{#each profile}}
-    <a class="list-item flex-row justify-space-between" href="/dashboard/editProfile/{{id}}">
-      <span>{{username}}</span>
-      <span>{{socialmedia}}</span>
+   <div class="profile">
+           <h1>Profile:</h1> 
+    <a class=" flex-row justify-space-between" href="/dashboard/editProfile/{{id}}">
+      <h3 class="profile">Username: {{username}}    <span>Social Media:  {{socialmedia}}</span></h3>
+      <h3></h3>
+    
       
     </a>
   {{/each}}
 </div>
+</div>
+
+
+
+  
+
+
