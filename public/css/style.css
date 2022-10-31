@@ -53,3 +53,7 @@ a:link { text-decoration: none; }
  text-decoration-color: whitesmoke;
  
 }
+#indivpost, #indivmeetup {
+  max-width: 45%;
+  max-height: auto;
+}
