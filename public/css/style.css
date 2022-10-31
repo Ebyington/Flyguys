@@ -57,3 +57,7 @@ a:link { text-decoration: none; }
   max-width: 70%;
   max-height: auto;
 }
+#card-img-top{
+  max-width: 500px;
+  height: auto;
+}
