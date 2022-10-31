@@ -1,20 +1,59 @@
-# Flyguys
-Your friends but higher
+# FLYGUYS
+ 
 
-## What is it?
-We have made a blog style social app for drone pilots/enthusiasts to share their high flying footage! This app will also allow users to coordinate in-person meetups for pilots to fly together or race their aircraft. Photos and videos will be tagged with location, weather, and technical data so that hobbyists can compare and research the various models out there.
+Web page link: https://limitless-island-09541.herokuapp.com/
 
-## Technology
+## Description
+A social app for drone pilots and enthusiasts to share their high flying footage! The user can sign up to create an account and begin viewing an awesome collection of drone footage. 
+
+As a member of the flyguys site, the user can have an interactive experience by creating a personal profile, posting personal drone footage, attending and/or creating meetups with the drone community locally or internationally. 
+
+
+<img src= "public\image\FGReadMeScreenshot.png">
+
+
+## Installation
+Use the package manager node to install FLYGUYS <br>
+
+- npm install
+## Usage
+- Review the package.json to ensure you have installed the necessary dependencies.
+
+- Run npm start to use the site locally.
+- Site is deployed on Heroku
+
+- Application usage:
+After log in or sign up, choose from the selection of links in the navigation bar to create/edit a profile, post, or meetup. Additionaly, take time to view the amazing posts from other members in the drone community. 
+
+
+
+
+
+## Credits
 - MySQL
 - Sequelize
-- NPM:
-- etc.
+- Bootstrap
+- SASS 
+- Node JS
+- Express
+- Express-Handlebars
+- Bcrypt
+- Dotenv
 
-## How to Use
-Words go here
 
-### Plans for Future Development
-Wow look at all these Words
+Robin Allman
+https://github.com/cod3burrito
 
-### Special thanks to
-Somebody 
+Eric Byington
+https://github.com/Ebyington
+
+Andreshe'a Caldwell
+https://github.com/Awell05
+
+Dennis Hickox
+https://github.com/frozzel
+
+## License
+
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  https://opensource.org/licenses/MIT
