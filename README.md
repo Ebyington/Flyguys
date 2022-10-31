@@ -9,7 +9,8 @@ A social app for drone pilots and enthusiasts to share their high flying footage
 As a member of the flyguys site, the user can have an interactive experience by creating a personal profile, posting personal drone footage, attending and/or creating meetups with the drone community locally or internationally. 
 
 
-<img src= "public\image\FGReadMeScreenshot.png">
+<img src= "public\image\flyguyreadmdsc1.png">
+<img src= "public\image\flyguyreadndsc2.png">
 
 
 ## Installation
