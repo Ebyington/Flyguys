@@ -98,7 +98,7 @@ a, a:hover {
     text-align: justify;
     height: 100%;
   }
-/* 
+
   .postcard__tagbox {
     display: flex;
     flex-flow: row wrap;
@@ -138,7 +138,7 @@ a, a:hover {
   &:hover .postcard__bar {
     width: 100px;
   }
-}
+
 
 @media screen and (min-width: 769px) {
   .postcard {
@@ -219,7 +219,7 @@ a, a:hover {
 }
 
 /* COLORS */
-/* 
+
 .postcard .postcard__tagbox .blue.play:hover {
 	background: $main-blue;
 }
@@ -248,4 +248,5 @@ a, a:hover {
 	}
 	.blue:nth-child(2n)::before {
 		background-image: linear-gradient(80deg, $main-blue-rgb-015, transparent 50%);
-	}  */
+	} 
+}
