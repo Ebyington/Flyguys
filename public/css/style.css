@@ -8,4 +8,18 @@ a:hover {
   color: #780000;
   font-style: italic;
 }
-
+.rowHi{
+  height: 800px;
+}
+.MeetupCross{
+  background-image: url('../image/pubg-drone-4k-lh.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  /* height: 100%;
+  width: 100%; */
+  color: #eeeeee;
+  text-align: center;
+  /* display: table; */
+}
