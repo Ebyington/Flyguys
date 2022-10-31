@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "node server.js"
+    "start": "node server.js",
+    "sass-watch": "sass --no-source-map --watch styles/main.scss public/css/main.css"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
     "mysql2": "^2.0.1",
+    "sass": "^1.55.0",
     "sequelize": "^5.21.2"
   }
 }
