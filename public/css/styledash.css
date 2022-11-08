@@ -7,6 +7,11 @@ html, body {
   .navbar{
     margin-bottom: 30px;
   }
+
+  .row{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
   .recipes{
     color: whitesmoke;
     padding: 20px;
@@ -15,11 +20,6 @@ html, body {
     text-align: center;
     text-shadow: 2px 2px 3px rgb(8, 8, 8);
 }
-  .row{
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
- 
   .card{
     /* justify-content: space-between; */
     background-color: whitesmoke;

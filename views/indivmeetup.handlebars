@@ -1,8 +1,63 @@
- <article class="card">
- <div class="card-header flex-row justify-space-between">
-      <img src="{{meetup.image}}" max-width="350px" height="auto" class="card-img-top" alt="...">
+ {{!-- <article class="card">
+ <div class="card-header flex-row justify-space-between" id="indivmeetup">
+      <img src="{{meetup.image}}"  class="card-img-top" alt="...">
       <h2>{{meetup.title}}</h2>
        <span><h3>{{meetup.location}}></h3></span>
        <span><p class="card-text">{{meetup.description}}</p></span>
     </div>
-  </article>
+  </article> --}}
+
+  <body>
+    
+
+
+<div class="row g-0 text-center" id="indivmeetup">
+
+  
+<div class="col-sm-8 col-md-8">
+
+
+<div class="card mb-3" style="max-width: 100%; height: 100%">
+  <div class="row g-0">
+    <div class="col-md-12">
+      <img src="{{meetup.image}}" class="img-fluid rounded" alt="..." width=100%; height=600px>
+    </div>
+    <div class="col-md-12">
+      <div class="card-body">
+        <h5 class="card-title">{{meetup.title}}</h5>
+        <p class="card-text">{{meetup.location}}</p>
+         <p class="card-text">{{meetup.description}}</p>
+        <p class="card-text"><small class="text-muted">Posted by {{meetup.user.email}} on {{format_date meetup.createdAt}}</small></p>
+      </div>
+<section class="">
+      <div class="">
+        <h3></h3>
+      </div>
+
+      <div class="">
+      
+          <div>
+            <p>
+           
+            </p>
+            <p class="card-text"><small class="text-muted"></small></p>
+            <p>
+           
+            </p>
+          </div>
+      
+      </div>
+    </section>
+ 
+
+  
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>

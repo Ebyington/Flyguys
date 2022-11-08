@@ -1,55 +1,93 @@
- html, body {
+html, body {
+  height: 100%;
+  background-color: #003049;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+} 
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+ /* position: fixed;
+ right: 0; */
+ top: 0;
+ /* min-width: 100%;
+ min-height: 100%; */
+  background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
    height: 100%;
-   background-color: #003049;
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
- } 
+   width: 100%;
+   color: #eeeeee;
+   text-align: center;
+   display: table;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+ position: absolute;
+ top: 40%;
+ /* background: rgba(0, 0, 0, 0.5); */
+ color: #f1f1f1;
+ width: 100%;
+ padding: 20px;
+ text-align: center;
+ text-shadow: 2px 2px 3px rgb(8, 8, 8);
+}
 
 a:hover {
-  color: #780000;
-  font-style: italic;
+ color: #780000;
+ font-style: italic;
 }
 .rowHi{
-  height: 800px;
+ height: 800px;
 }
 .MeetupCross{
-  background-image: url('../image/BG.jpg');
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  /* height: 100%;
-  width: 100%; */
-  color: #eeeeee;
-  text-align: center;
-  /* display: table; */
+ background-image: url('../image/BG.jpg');
+ background-attachment: fixed;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center center;
+ /* height: 100%;
+ width: 100%; */
+ color: #eeeeee;
+ text-align: center;
+ /* display: table; */
 }
 .OpenStatement{
-  color: white;
-  padding: 30px;
-  font-size: 70px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  justify-content: center;
-  
-  text-shadow: 2px 2px 3px rgb(8, 8, 8);
-  
-  margin-top: 10%;
-  
+ color: white;
+ padding: 30px;
+ font-size: 70px;
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ justify-content: center;
+ 
+ text-shadow: 2px 2px 3px rgb(8, 8, 8);
+ 
+ margin-top: 10%;
+ 
 }
 .row{
-  flex-direction: row;
-  justify-content: space-evenly;
+ flex-direction: row;
+ justify-content: space-evenly;
 }
 
 .card{
-  /* justify-content: space-between; */
-  background-color: whitesmoke;
-  margin: 10px;
- 
+ /* justify-content: space-between; */
+ background-color: whitesmoke;
+ margin: 10px;
+
 }
 a:link { text-decoration: none; }
 .profile{
- color: whitesmoke;
- text-decoration-line: none;
- text-decoration-color: whitesmoke;
- 
+color: whitesmoke;
+text-decoration-line: none;
+text-decoration-color: whitesmoke;
+
 }
+/* #indivpost, #indivmeetup {
+ max-width: 70%;
+ max-height: auto;
+} */
+/* #card-img-top{
+ max-width: 500px;
+ height: auto;
+} */

@@ -1,7 +1,7 @@
-<article class="card">
-    <div class="card-header flex-row justify-space-between">
-      <span><img src="{{userPost.image}}" width="350px" height="auto" class="card-img-top" alt="...">
-      <iframe max-width="350px" height="auto" src="{{userPost.videoLink}}" title="YouTube player" allowfullscreen></iframe>
+{{!-- <article class="card">
+    <div class="card-header flex-row justify-space-between" id="indivpost">
+      <span><img width= "50%" height= "" src="{{userPost.image}}" class="card-img-top" alt="...">
+      <iframe src="{{userPost.videoLink}}" title="YouTube player" allowfullscreen></iframe>
       </span>
       <span><h2>{{username}}</h2></span>
        <span><p class="card-text">{{userPost.description}}</p></span>
@@ -9,5 +9,60 @@
        </span>
        <span><p class="card-text">{{tags}}</p></span>
     </div>
-  </article>
+  </article> --}}
+  </div>
 
+<body>
+    
+
+
+<div class="row g-0 text-center" id="indivpost">
+
+  
+<div class="col-sm-8 col-md-8">
+
+
+<div class="card mb-3" style="max-width: 100%; height: 100%">
+  <div class="row g-0">
+    <div class="col-md-12">
+      <iframe src="{{userPost.videoLink}}" title="YouTube player" width=100%; height=600px;></iframe>
+    </div>
+    <div class="col-md-12">
+      <div class="card-body">
+        <h5 class="card-title">{{userPost.typeOfDrone}}</h5>
+        <p class="card-text">{{userPost.description}}</p>
+        <p class="card-text"><small class="text-muted">Posted by {{userPost.user.email}} on {{format_date userPost.createdAt}}</small></p>
+      </div>
+ 
+    <section class="">
+      <div class="">
+        <h3></h3>
+      </div>
+
+      <div class="">
+      
+          <div>
+            <p>
+           
+            </p>
+            <p class="card-text"><small class="text-muted"></small></p>
+            <p>
+           
+            </p>
+          </div>
+      
+      </div>
+    </section>
+ 
+
+  
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
